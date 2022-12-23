@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(null_space_optimization)
+project(hitting_point_optimization)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++14)
@@ -8,7 +8,6 @@ set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -Wall -fPIC" )
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-#find_package(Eigen3 3.4 REQUIRED NO_MODULE)
 find_package(Eigen3 3.3 REQUIRED NO_MODULE)
 
 find_package(NLopt REQUIRED)
