@@ -216,10 +216,10 @@ double HittingPointOptimizerSingle::getMaxVelocityLP(const JointArrayType &q, Ei
 }
 
 
-boost::python::list optimize(double x, double y, double z, double cth, double sth, boost::python::list q0) {
+boost::python::list optimize(string robot_path, double x, double y, double z, double cth, double sth, boost::python::list q0) {
 //boost::python::list optimize(double x, double y, double z, double cth, double sth) {
     auto start = chrono::high_resolution_clock::now();
-    HittingPointOptimizerSingle optimizer("../../iiwa_striker.urdf");
+    HittingPointOptimizerSingle optimizer(robot_path);
 
     Eigen::Vector3d hitPos, hitDir;
     Eigen::Matrix<double, 9, 1> qDir;
