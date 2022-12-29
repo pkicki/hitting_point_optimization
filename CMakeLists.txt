@@ -33,7 +33,7 @@ target_link_libraries(utils
 
 add_library(hpo_opt_new MODULE src/hpo_opt_new.cpp)
 target_link_libraries(hpo_opt_new ${Boost_LIBRARIES} ${PYTHON_LIBRARIES}
-        NLopt::nlopt
+        ${NLOPT_LIBRARIES}
         Eigen3::Eigen
         Clp
         CoinUtils
