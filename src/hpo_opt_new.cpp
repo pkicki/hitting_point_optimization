@@ -242,13 +242,7 @@ boost::python::list optimize(string robot_path, double x, double y, double z, do
     auto finish = chrono::high_resolution_clock::now();
 
     boost::python::list list;
-    if (ret) {
-        cout << qInOut << endl;
-        cout << qDir << endl;
-        cout << velMag << endl;
-    } else {
-        return list;
-    }
+    if (not ret) return list;
     for (auto i=0; i < 9; i++) {
         list.append(qInOut[i]);
     }
@@ -258,7 +252,7 @@ boost::python::list optimize(string robot_path, double x, double y, double z, do
     list.append(velMag);
     list.append(final_f);
 
-    cout << "TIME[ms]: " << chrono::duration_cast<std::chrono::nanoseconds>(finish-start).count() / 1.e6;
+    //cout << "TIME[ms]: " << chrono::duration_cast<std::chrono::nanoseconds>(finish-start).count() / 1.e6;
     return list;
 }
 
